@@ -244,6 +244,9 @@ async def main(message: types.Message):
 					pass
 				else:
 					await bot.send_message(message.from_user.id, 'Такого продукта нет 😕', reply_markup=nav.foodMenu)
+                                del buttons_text[:]
+                                del buttons_list[:]
+                                del buttons_callbacks[:]
 
 				@dp.callback_query_handler(lambda c: c.data.startswith('btn'))
 				async def process_callback_button(callback_query: types.CallbackQuery):
