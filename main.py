@@ -247,6 +247,7 @@ async def main(message: types.Message):
                                 del buttons_text[:]
                                 del buttons_list[:]
                                 del buttons_callbacks[:]
+                                del keyboard_inline_buttons[:]
 
 				@dp.callback_query_handler(lambda c: c.data.startswith('btn'))
 				async def process_callback_button(callback_query: types.CallbackQuery):
